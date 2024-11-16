@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-import './App.css'
+// import './App.css'
+import './app.scss'
 import Login from './components/login'
 import GetAllNotes from './components/GetAllNotes'
 
@@ -17,10 +18,8 @@ function App() {
   
   return (
     <>
-      {/* { localStorage ? setIsConnected(true) : <Login setIsConnected={setIsConnected} /> } */}
       {/* { isConnected ? <Login setIsConnected={setIsConnected} /> : <GetAllNotes />} */}
-      { isConnected ? <GetAllNotes /> : <Login setIsConnected={setIsConnected} /> }
-      
+      { isConnected ? <GetAllNotes /> : <Login setIsConnected={setIsConnected} /> }      
     </>
   )
 }

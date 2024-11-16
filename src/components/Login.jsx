@@ -3,13 +3,12 @@ import { useState } from 'react'
 // import viteLogo from '/vite.svg'
 // import './App.css'
 import axios from 'axios';
-import '../login.scss';
 
 function Login(props) {
 
     
-    const [cin, setCin] = useState('JK36184');
-    const [pass, setPassword] = useState('123456');
+    const [cin, setCin] = useState('');
+    const [pass, setPassword] = useState('');
 
     const onButtonClick = async (e) => {
         e.preventDefault(); //Pour eliminer le comportement par defaut d un form (submit) {3 methodes : preventDefault / type button/ <div> au lieu de <form>}
