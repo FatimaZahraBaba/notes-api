@@ -6,30 +6,28 @@ import Login from './components/Login'
 import GetAllNotes from './components/GetAllNotes'
 import Logout from './components/Logout'
 
+   
+axios.interceptors.request.use((request) => {
+  const token = localStorage.getItem('token');
+  if (token) {
+    request.headers.Authorization = `Bearer ${token}`;
+  }
+  console.log('Interceptor called');
+  console.log(request);
+  return request;
+  
+});
+
 function App() {
 
   const [isConnected, setIsConnected] = useState(false);
 
-  // useEffect(() => {
-  //   if(localStorage.getItem('token')) {
-  //     setIsConnected(true);
-  //   }
-  // }, [])
-  
   useEffect(() => {
     const token = localStorage.getItem('token');
-    axios.interceptors.request.use((request) => {
-      if (token) {
-        request.headers.Authorization = `Bearer ${token}`;
-      }
-      return request;
-    });
     if(token) {
       setIsConnected(true);
     }
   }, []);
-
-
 
   return (
     <>
