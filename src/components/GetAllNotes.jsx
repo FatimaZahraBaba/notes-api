@@ -5,25 +5,40 @@ import axios from 'axios';
 function GetAllNotes() {
     
     const [notesList, setNotesList] = useState([]);
-    const token = localStorage.getItem("token");
     
-    const getNotes = async () => {
-        const url = 'https://notes.devlop.tech/api/notes';
-        const resp = await axios.get(url, {
-            headers : {
-                Authorization : `Bearer ${token}`
-            }
-        });
-        console.log(resp.data);
+    // const getNotes = async () => {
+    //     const token = localStorage.getItem("token");
+    //     const url = 'https://notes.devlop.tech/api/notes';
+    //     const resp = await axios.get(url, {
+    //         headers : {
+    //             Authorization : `Bearer ${token}`
+    //         }
+    //     });
+    //     setNotesList(resp.data);
+    //     // console.log(resp.data);
+    // }
+
+    // useEffect(() => {
+    //     getNotes();
+    // }, [])
+
+const getNotes = async () => {
+    const url = 'https://notes.devlop.tech/api/notes';
+    try {
+        const resp = await axios.get(url);
         setNotesList(resp.data);
+    } catch(e) {
+        console.log(`Error : ${e}`);
     }
+}
 
 useEffect(() => {
     getNotes();
-}, []);
+}, [])
 
   return (
     <>
+    <div className="notes">
         <h1>Notes List</h1>
         
             <table border={1}>
@@ -38,14 +53,15 @@ useEffect(() => {
                     {
                         notesList.map((note, index) => (
                             <tr key={index}>
-                                <td key={note.id}> {note.id} </td>
-                                <td key={note.title}> {note.title} </td>
-                                <td key={note.content}> {note.content} </td>
+                                <td> {note.id} </td>
+                                <td> {note.title} </td>
+                                <td> {note.content} </td>
                             </tr>
                         ))
                     }
                 </tbody>
             </table>
+        </div>
     </>
   )
 }
