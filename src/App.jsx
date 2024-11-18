@@ -19,9 +19,11 @@ axios.interceptors.request.use((request) => {
   
 });
 
-const navigate = useNavigate();
 
 function App() {
+  
+  const navigate = useNavigate();
+
   useEffect(() => {
     axios.interceptors.response.use(response => {
       return response;
