@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import './app.scss'
 import Login from './components/Login'
@@ -19,13 +20,24 @@ axios.interceptors.request.use((request) => {
 });
 
 function App() {
+  
+  useEffect(() => {
+    axios.interceptors.response.use(response => {
+      return response;
+    }, error => {
+      if (error.response.status === 401) {
+          useNavigate('/login');
+      }
+      return error;
+    });
+  }, []);
 
   // const [isConnected, setIsConnected] = useState(false);
   useEffect(() => {
     const token = localStorage.getItem('token');
-    if(token) {
-      setIsConnected(true);
-    }
+    // if(token) {
+    //   setIsConnected(true);
+    // }
   }, []);
 
   return (

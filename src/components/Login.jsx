@@ -18,6 +18,9 @@ function Login(props) {
             localStorage.setItem('token', token);
         } catch (e) {
             console.log("Error : " + e);
+            // if (e.response.status === 401) {
+            //   navigate('/login');
+            // }
         }
         navigate('/');
         // props.setIsConnected(true);
