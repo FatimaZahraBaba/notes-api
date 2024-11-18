@@ -20,8 +20,7 @@ axios.interceptors.request.use((request) => {
 
 function App() {
 
-  const [isConnected, setIsConnected] = useState(false);
-
+  // const [isConnected, setIsConnected] = useState(false);
   useEffect(() => {
     const token = localStorage.getItem('token');
     if(token) {
@@ -31,20 +30,13 @@ function App() {
 
   return (
     <>
-      { isConnected ? <GetAllNotes /> : <Login setIsConnected={setIsConnected} /> } 
-      {/* <Router>
+      {/* { isConnected ? <GetAllNotes /> : <Login setIsConnected={setIsConnected} /> }  */}
+      <Router>
         <Routes>
-          {
-            isConnected 
-            ? 
-              <Route exact path="/" element={<GetAllNotes />} /> 
-            :
-              <Route path="/login" element={<Login setIsConnected={setIsConnected} />} />
-          }
-          <Route exact path='/logout' element={<Logout />} />
+          <Route path='/' element={<> <GetAllNotes /> <Logout /> </>} />
+          <Route path='/login' element={<Login />} />
         </Routes>
-      </Router> */}
-      <Logout />     
+      </Router>
     </>
   )
 }

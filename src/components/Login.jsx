@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Login(props) {
 
     
     const [cin, setCin] = useState('JK36184');
     const [pass, setPassword] = useState('123456');
+    const navigate = useNavigate();
 
     const onButtonClick = async (e) => {
         e.preventDefault(); //Pour eliminer le comportement par defaut d un form (submit) {3 methodes : preventDefault / type button/ <div> au lieu de <form>}
@@ -17,7 +19,8 @@ function Login(props) {
         } catch (e) {
             console.log("Error : " + e);
         }
-        props.setIsConnected(true);
+        navigate('/');
+        // props.setIsConnected(true);
         // props.setToken(token);
     }
 
@@ -28,8 +31,6 @@ function Login(props) {
         <input type="text" value={cin} onChange={ e => setCin(e.target.value)} placeholder='CIN' /> <br />
         <input type="text" value={pass} onChange={ e => setPassword(e.target.value)} placeholder='Password' /> <br />
         <button  onClick={onButtonClick} id='login'>Login</button>
-        {/* <button type='button' onClick={onButtonClick}>Login</button> */}
-        {/* <input type="submit" value="Login"/> */}
       </form>
     </>
   )
