@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 
 function GetAllNotes() {
     
     const [notesList, setNotesList] = useState([]);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     
     // const getNotes = async () => {
     //     const token = localStorage.getItem("token");
@@ -27,19 +27,18 @@ function GetAllNotes() {
 
 const getNotes = async () => {
     const url = 'https://notes.devlop.tech/api/notes';
-    try {
+    // try {
         const resp = await axios.get(url);
         setNotesList(resp.data);
-    } catch(e) {
-        console.log(`Error : ${e}`);
-    }
+    // } catch(e) {
+    //     console.log(`Error : ${e}`);
+    // }
 }
-
 useEffect(() => {
-    const token = localStorage.getItem("token");
-    if(!token) {
-        navigate('/login');
-    }
+    // const token = localStorage.getItem("token");
+    // if(!token) {
+    //     navigate('/login');
+    // }
     getNotes();
 }, [])
 

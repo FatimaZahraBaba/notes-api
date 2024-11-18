@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {Routes, Route } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import './app.scss'
@@ -19,36 +19,37 @@ axios.interceptors.request.use((request) => {
   
 });
 
+const navigate = useNavigate();
+
 function App() {
-  
   useEffect(() => {
     axios.interceptors.response.use(response => {
       return response;
     }, error => {
       if (error.response.status === 401) {
-          useNavigate('/login');
+          navigate('/login');
       }
       return error;
     });
   }, []);
 
   // const [isConnected, setIsConnected] = useState(false);
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    // if(token) {
-    //   setIsConnected(true);
-    // }
-  }, []);
+  // useEffect(() => {
+  //   const token = localStorage.getItem('token');
+  //   if(token) {
+  //     setIsConnected(true);
+  //   }
+  // }, []);
 
   return (
     <>
       {/* { isConnected ? <GetAllNotes /> : <Login setIsConnected={setIsConnected} /> }  */}
-      <Router>
+      {/* <Router> */}
         <Routes>
           <Route path='/' element={<> <GetAllNotes /> <Logout /> </>} />
           <Route path='/login' element={<Login />} />
         </Routes>
-      </Router>
+      {/* </Router> */}
     </>
   )
 }

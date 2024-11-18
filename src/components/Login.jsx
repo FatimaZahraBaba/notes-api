@@ -11,17 +11,17 @@ function Login(props) {
 
     const onButtonClick = async (e) => {
         e.preventDefault(); //Pour eliminer le comportement par defaut d un form (submit) {3 methodes : preventDefault / type button/ <div> au lieu de <form>}
-        try {
+        // try {
             const url = 'https://notes.devlop.tech/api/login';
             const resp = await axios.post(url, {cin, "password": pass});
             const token = resp.data.token;
             localStorage.setItem('token', token);
-        } catch (e) {
-            console.log("Error : " + e);
-            // if (e.response.status === 401) {
-            //   navigate('/login');
-            // }
-        }
+        // } catch (e) {
+        //     console.log("Error : " + e);
+        //     // if (e.response.status === 401) {
+        //     //   navigate('/login');
+        //     // }
+        // }
         navigate('/');
         // props.setIsConnected(true);
         // props.setToken(token);
