@@ -80,6 +80,7 @@ const deleteNote = async (e) => {
                     }
                 </tbody>
             </table>
+            
         </div>
     </>
   )

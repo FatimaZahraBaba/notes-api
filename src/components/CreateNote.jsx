@@ -35,11 +35,12 @@ function CreateNote() {
         const url = 'https://notes.devlop.tech/api/notes';
         const resp = await axios.post(url, {title, content});
         console.log(resp);
-        // navigate('/');
+        navigate('/');
     }
 
     return (
         <>
+            <h1 id="note">Note</h1>
             <form action="" id='create-note' >
                 <input type="text" value={title} onChange={e => setTitle(e.target.value)} placeholder="Title" required/> <br />
                 <textarea value={content} onChange={e => setContent(e.target.value)} placeholder=" Content ..." maxLength={200} required></textarea> <br />

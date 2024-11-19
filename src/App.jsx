@@ -55,7 +55,6 @@ function App() {
           <Route path='/notes' element={<> <CreateNote /> <Logout /> </>} />
         </Routes>
       {/* </Router> */}
-      <CreateNote />
     </>
   )
 }
