@@ -50,10 +50,15 @@ function App() {
       {/* { isConnected ? <GetAllNotes /> : <Login setIsConnected={setIsConnected} /> }  */}
       {/* <Router> */}
         <Routes>
-          <Route exact path='/' element={<> <GetAllNotes /> <Logout /> </>} />
+          <Route exact path='/' element={<GetAllNotes />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/notes' element={<> <CreateNote /> <Logout /> </>} />
+          <Route path='/notes' element={<CreateNote />} />
         </Routes>
+        {/* <Logout /> */}
+
+        {
+          localStorage.getItem('token') ? <Logout /> : ''
+        }
       {/* </Router> */}
     </>
   )
