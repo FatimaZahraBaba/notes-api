@@ -11,6 +11,7 @@ body {
 #root {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
 }
 
 .notes {
@@ -44,6 +45,10 @@ th, td {
   text-align: center;
 }
 
+th#action {
+  background-color: transparent;
+}
+
 form {
   margin: auto;
   width: 30%;
@@ -55,7 +60,7 @@ form {
   flex-direction: column;
 }
 
-input {
+input, textarea {
   width: 100%;
   padding: 10px;
   border: 1px solid #f2f2f2;
@@ -65,11 +70,35 @@ input {
   border: 2px solid #f2f2f2;
 }
 
+textarea {
+  height: 100px;
+}
+
 button {
   font-weight: bold;
   color: rgb(67, 67, 81);
   cursor: pointer;
   margin: 10px;
+}
+
+#add {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  width: 150px;
+  position: relative;
+  left: 800px;
+  margin-bottom: 0px;
+}
+
+#delete {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #f52c2c;
+  color: white;
 }
 
 #login {
@@ -90,4 +119,21 @@ button {
   border: none;
   border-radius: 5px;
   background-color: #c4baba;
+}
+
+#add-note {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  width: 50px;
+  position: relative;
+  left: 270px;
+}
+
+#create-note {
+  margin-top: 0px;
+}
+
+select {
+  width: 100px;
 }/*# sourceMappingURL=app.css.map */

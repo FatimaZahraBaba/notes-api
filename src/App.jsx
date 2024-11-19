@@ -6,6 +6,7 @@ import './app.scss'
 import Login from './components/Login'
 import GetAllNotes from './components/GetAllNotes'
 import Logout from './components/Logout'
+import CreateNote from './components/CreateNote'
 
    
 axios.interceptors.request.use((request) => {
@@ -13,8 +14,8 @@ axios.interceptors.request.use((request) => {
   if (token) {
     request.headers.Authorization = `Bearer ${token}`;
   }
-  console.log('Interceptor called');
-  console.log(request);
+  // console.log('Interceptor request called');
+  // console.log(request);
   return request;
   
 });
@@ -31,6 +32,7 @@ function App() {
       if (error.response.status === 401) {
           navigate('/login');
       }
+      // console.log('Interceptor response called');
       return error;
     });
   }, []);
@@ -48,10 +50,12 @@ function App() {
       {/* { isConnected ? <GetAllNotes /> : <Login setIsConnected={setIsConnected} /> }  */}
       {/* <Router> */}
         <Routes>
-          <Route path='/' element={<> <GetAllNotes /> <Logout /> </>} />
+          <Route exact path='/' element={<> <GetAllNotes /> <Logout /> </>} />
           <Route path='/login' element={<Login />} />
+          <Route path='/notes' element={<> <CreateNote /> <Logout /> </>} />
         </Routes>
       {/* </Router> */}
+      <CreateNote />
     </>
   )
 }
