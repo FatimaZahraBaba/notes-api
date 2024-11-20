@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useNavigate } from "react-router-dom"
 
 
-function CreateNote() {
+function CreateNote({note}) {
 
     // const titleField = useRef();
     // const contentField = useRef();
@@ -21,8 +21,6 @@ function CreateNote() {
     //     console.log(shareValue);
         
     // }
-
-
 
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
@@ -42,16 +40,8 @@ function CreateNote() {
         <>
             <h1 id="note">Note</h1>
             <form action="" id='create-note' >
-                <input type="text" value={title} onChange={e => setTitle(e.target.value)} placeholder="Title" required/> <br />
-                <textarea value={content} onChange={e => setContent(e.target.value)} placeholder=" Content ..." maxLength={200} required></textarea> <br />
-                {/* <small>Shared with</small>
-                <select value={sharedWith} multiple onChange={e => setsharedWith(e.target.value)}>
-                    <option value="Shared-with"></option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select> */}
+                <input type="text" name="title" value={title} onChange={e => setTitle(e.target.value)} placeholder="Title" required/> <br />
+                <textarea name="content" value={content} onChange={e => setContent(e.target.value)} placeholder=" Content ..." maxLength={200} required></textarea> <br />
                 <button id="add-note" onClick={submitForm}>Add</button>
             </form>
         </>

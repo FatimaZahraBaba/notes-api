@@ -7,6 +7,7 @@ import Login from './components/Login'
 import GetAllNotes from './components/GetAllNotes'
 import Logout from './components/Logout'
 import CreateNote from './components/CreateNote'
+import UpdateNote from './components/UpdateNote'
 
    
 axios.interceptors.request.use((request) => {
@@ -53,9 +54,8 @@ function App() {
           <Route exact path='/' element={<GetAllNotes />} />
           <Route path='/login' element={<Login />} />
           <Route path='/notes' element={<CreateNote />} />
+          <Route path='/notes/:id' element={<UpdateNote />} />
         </Routes>
-        {/* <Logout /> */}
-
         {
           localStorage.getItem('token') ? <Logout /> : ''
         }

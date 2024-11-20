@@ -53,12 +53,17 @@ const deleteNote = async (e) => {
     getNotes();
 }
 
+const updateNote = async (e) => {
+    const id = e.target.getAttribute('data-id');
+    navigate(`/notes/${id}`);
+}
+
   return (
     <>
     <div className="notes">
         <h1>Notes List</h1>
-        <button id='add' onClick={addNote}>Add a new note</button>
-            <table border={1}>
+        <button id='add' onClick={addNote}>Add note</button>
+            <table >
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -74,7 +79,10 @@ const deleteNote = async (e) => {
                                 <td> {note.id} </td>
                                 <td> {note.title} </td>
                                 <td> {note.content} </td>
-                                <td> <button data-id={note.id} id='delete' onClick={deleteNote}> Delete </button> </td>
+                                <td> 
+                                    <button data-id={note.id} id='delete' onClick={deleteNote}> Delete </button> 
+                                    <button data-id={note.id} id='update' onClick={updateNote}> Update </button> 
+                                </td>
                             </tr>
                         ))
                     }
