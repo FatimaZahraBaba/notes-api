@@ -13,7 +13,7 @@ function GetAllNotes() {
     
     // const getNotes = async () => {
     //     const token = localStorage.getItem("token");
-    //     const url = 'https://notes.devlop.tech/api/notes';
+    //     const url = '/notes';
     //     const resp = await axios.get(url, {
     //         headers : {
     //             Authorization : `Bearer ${token}`
@@ -29,7 +29,7 @@ function GetAllNotes() {
 
 
 const getNotes = async () => {
-    const url = 'https://notes.devlop.tech/api/notes';
+    const url = '/notes';
     // try {
         const resp = await axios.get(url);
         setNotesList(resp.data);
@@ -44,12 +44,14 @@ useEffect(() => {
     // }
     getNotes();
 }, [])
+// console.log(notesList);
+
 
 const deleteNote = async (e) => {
     const id = e.target.getAttribute('data-id');
-    const url = `https://notes.devlop.tech/api/notes/${id}`;
+    const url = `/notes/${id}`;
     const resp = await axios.delete(url);
-    console.log(resp);
+    // console.log(resp);
     getNotes();
 }
 
@@ -69,6 +71,7 @@ const updateNote = async (e) => {
                         <th>ID</th>
                         <th>Title</th>
                         <th>Content</th>
+                        <th>Shared with</th>
                         <th id='action'></th>
                     </tr>
                 </thead>
@@ -79,6 +82,21 @@ const updateNote = async (e) => {
                                 <td> {note.id} </td>
                                 <td> {note.title} </td>
                                 <td> {note.content} </td>
+                                <td> 
+                                    <table>
+                                        <tbody>
+                                        {
+                                            note.shared_with.map((u, index) => {
+                                                return <tr key={index}>
+                                                    <td>{u.id}</td>
+                                                    <td>{u.last_name} {u.first_name}</td>
+                                                </tr>             
+                                            })
+                                        } 
+                                        </tbody>
+                                    </table>
+
+                                </td>
                                 <td> 
                                     <button data-id={note.id} id='delete' onClick={deleteNote}> Delete </button> 
                                     <button data-id={note.id} id='update' onClick={updateNote}> Update </button> 

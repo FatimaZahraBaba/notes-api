@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
-import {Routes, Route, useNavigate } from 'react-router-dom';
+import {Routes, Route, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import './app.scss'
 import Login from './components/Login'
 import GetAllNotes from './components/GetAllNotes'
 import Logout from './components/Logout'
-import CreateNote from './components/CreateNote'
-import UpdateNote from './components/UpdateNote'
+import ManageNote from './components/ManageNote';
+// import CreateNote from './components/CreateNote'
+// import UpdateNote from './components/UpdateNote'
 
-   
 axios.interceptors.request.use((request) => {
   const token = localStorage.getItem('token');
   if (token) {
@@ -17,9 +17,7 @@ axios.interceptors.request.use((request) => {
   // console.log('Interceptor request called');
   // console.log(request);
   return request;
-  
 });
-
 
 function App() {
   
@@ -52,8 +50,8 @@ function App() {
         <Routes>
           <Route exact path='/' element={<GetAllNotes />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/notes' element={<CreateNote />} />
-          <Route path='/notes/:id' element={<UpdateNote />} />
+          <Route path='/notes' element={<ManageNote />} />
+          <Route path='/notes/:id' element={<ManageNote />} />
         </Routes>
         {
           localStorage.getItem('token') ? <Logout /> : ''

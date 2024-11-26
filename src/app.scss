@@ -138,39 +138,32 @@ button {
     background-color: #c4baba;
 }
 
-#add-note, #update-note {
+#manage-note {
     border: none;
     border-radius: 5px;
     padding: 10px;
+    color: 'white';
     // width: 50px;
     // margin: auto;
     position: relative;
     // left: 270px;
 
 }
-#add-note {
+.add-note {
     width: 50px;
     left: 270px;
 }
-#update-note {
+.update-note {
     width: 70px;
     left: 250px;
 }
-#add-note:hover{
+.add-note:hover{
     background-color: rgb(0, 128, 0, .8);
     color: white;
 }
-#update-note:hover{
+.update-note:hover{
     background-color: rgb(65, 65, 250);
     color: white;
-}
-
-// #create-note {
-//     margin-top: 0px;
-// }
-
-#update-note {
-    margin-top: 0px;
 }
 
 select {

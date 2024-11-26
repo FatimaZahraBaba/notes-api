@@ -7,8 +7,7 @@ function Logout () {
 
     const navigate = useNavigate();
     const logout = async () => {
-        console.log("Redirecting...");
-        const url = 'https://notes.devlop.tech/api/logout';
+        const url = '/logout';
         const resp = await axios.post(url);
         // console.log(resp.data);
         localStorage.removeItem('token');
