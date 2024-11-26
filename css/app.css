@@ -142,35 +142,32 @@ button {
   background-color: #c4baba;
 }
 
-#add-note, #update-note {
+#manage-note {
   border: none;
   border-radius: 5px;
   padding: 10px;
+  color: "white";
   position: relative;
 }
 
-#add-note {
+.add-note {
   width: 50px;
   left: 270px;
 }
 
-#update-note {
+.update-note {
   width: 70px;
   left: 250px;
 }
 
-#add-note:hover {
+.add-note:hover {
   background-color: rgba(0, 128, 0, 0.8);
   color: white;
 }
 
-#update-note:hover {
+.update-note:hover {
   background-color: rgb(65, 65, 250);
   color: white;
-}
-
-#update-note {
-  margin-top: 0px;
 }
 
 select {
