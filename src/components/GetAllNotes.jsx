@@ -8,9 +8,8 @@ function GetAllNotes() {
     const [notesList, setNotesList] = useState([]);
     const navigate = useNavigate();
 
-    const addNote = () => { navigate('/notes') }
+    const addNote = () =>  navigate('/notes') ;
 
-    
     // const getNotes = async () => {
     //     const token = localStorage.getItem("token");
     //     const url = '/notes';
@@ -26,7 +25,6 @@ function GetAllNotes() {
     // useEffect(() => {
     //     getNotes();
     // }, [])
-
 
 const getNotes = async () => {
     const url = '/notes';
