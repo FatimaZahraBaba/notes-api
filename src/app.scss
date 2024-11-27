@@ -8,6 +8,21 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
+#bg-body {
+    // background: url('../public/bg.jpg');
+    // z-index: -1;
+    background: url(../public/Amarillo.jpg) no-repeat;
+    background-size: cover;
+    height: 3250px;
+    z-index: -1;
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    right: -50px;
+    // bottom: -50px;
+    filter: blur(8px);
+}
+
 #root {
 
     // background-color: rgb(204, 255, 0);
@@ -27,6 +42,7 @@ body {
 }
 
 h1 {
+    text-decoration: underline;
     text-align: center;
     margin-top: 50px;
     color: rgb(67, 67, 81);
@@ -92,15 +108,20 @@ button {
     border: none;
     padding: 6px 10px;
     border-radius: 5px;
-    background-color: #74bd88;
+    // background-color: #74bd88;
+    // background-color: rgba(190, 131, 4, 0.6);
+    background-color: rgba(255, 174, 0, 0.5);
     color: white;
     width: 100px;
     position: relative;
-    left: 855px;
+    right: 10px;
+    top: 0px;
+    left: 860px;
     margin-bottom: 0px;
 }
 #add:hover {
-    box-shadow: 0 0 10px rgba(55, 255, 0, 0.4);
+    // box-shadow: 0 0 10px rgba(55, 255, 0, 0.4);
+    box-shadow: 0 0 10px rgba(190, 131, 4, 0.6);
 }
 #delete, #update {
     border: none;
@@ -109,20 +130,22 @@ button {
     color: white;
 }
 #delete {
-    background-color: rgba(255, 0, 0, 0.7);
+    background-color: rgba(255, 0, 0, 0.6);
 }
 #delete:hover {
     // background-color: white;
     background-color: transparent;
-    color: rgba(255, 0, 0, 0.7);
+    color: rgba(255, 0, 0, 0.6);
 }
 #update {
-    background-color: rgba(0, 0, 255, 0.7);
+    // background-color: rgba(0, 0, 255, 0.6);
+    background-color: rgb(3, 201, 211, 0.7);
 }
 #update:hover {
     // background-color: white;
     background-color: transparent;
-    color: rgba(0, 0, 255, 0.7);
+    // color: rgba(0, 0, 255, 0.6);
+    color: rgb(3, 201, 211, 0.7);
 }
 
 #login {
@@ -140,11 +163,16 @@ button {
     width: 90px;
     padding: 8px;
     border: none;
-    border-radius: 5px;
-    background-color: #c4baba;
+    border-radius: 10px;
+    // background-color: #c4baba;
+    background-color: transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
     &:hover {
         background-color: transparent;
         color: rgb(67, 67, 81);
+        font-size: 16px;
+
     }
 }
 
@@ -230,7 +258,8 @@ select {
 //     // left: 1px,
 // }
 .user-style {
-    background-color: #74bd88;
+    // background-color: #74bd88;
+    background-color: rgba(190, 131, 4, 0.6);
     color: white;
     width: 35px;
     height: 35px;
@@ -250,11 +279,12 @@ select {
     }
 }
 .border-name {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     // background-color: #7e681f;
-    background-color: #dfdede;
-    border-radius: 22px;
+    // background-color: #dfdede;
+    background-color: white;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -267,7 +297,8 @@ select {
 .hover-name {
     visibility : hidden;
     // background-color: #78715b;
-    background-color: #74bd88;
+    // background-color: #74bd88;
+    background-color: rgba(190, 131, 4, 0.6);
     color: white;
     text-align: center;
     font-size: 10px;
@@ -284,7 +315,8 @@ select {
 
 .liste-notes {
     // background-color: rgb(222, 165, 165);
-    background-color: rgb(183, 244, 183, 0.6);
+    // background-color: rgb(183, 244, 183, 0.6);
+    // background-color: rgb(255, 255, 0, 0.2);
     border-top-left-radius: 150px ;
     border-top-right-radius: 150px ;
     padding: 50px 20px;
@@ -293,14 +325,18 @@ select {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     .note {
         display: flex;
         margin: 0px auto 15px; 
-        padding: 10px;
+        padding: 0px 10px 0px 0px;
         width: 90%;
+        height: inherit;
         // margin-bottom: 10px;
         // margin-left: 50px;
-        background-color: #ede3e3;
+        // background-color: #ede3e3;
+        background-color: rgb(252, 252, 193);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         // background-color: white;
         border-radius: 10px;
         align-items: center;
@@ -308,7 +344,7 @@ select {
         .note-title {
             // display: flex;
             text-align: center;
-            text-decoration: underline;
+            // text-decoration: underline;
             // align-items: center;
             // justify-content: center;
             padding: 10px 5px;
@@ -317,10 +353,13 @@ select {
             color: rgb(67, 67, 81);
             margin-right: 10px;
             width: 200px;
+            margin-left: 0px;
             // height: 50px;
             // background-color: #74bd88;
+            background-color: rgba(255, 174, 0, 0.5);
             // margin-bottom: 10px;
-            border-radius: 5px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
         }
         .note-content {
             display: flex;
