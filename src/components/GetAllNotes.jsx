@@ -5,24 +5,6 @@ import { useNavigate } from 'react-router-dom';
 
 function GetAllNotes() {
 
-    // const fullName = {
-    //     visibility : 'hidden',
-    //     backgroundColor: '#F1C232',
-    //     color: 'white',
-    //     fontSize: '10px',
-    //     // width: '150px',
-    //     maxWidth: '400px',
-    //     maxHeight: '100px',
-    //     padding: '5px 10px',
-    //     borderRadius: '5px',
-    //     position: 'absolute',
-    //     top: '-40px',
-    //     left: '1px',
-    //     // '&:hover' {
-    //     //     visibility: 'visible'
-    //     // }  
-    // }
-    
     const [notesList, setNotesList] = useState([]);
     const navigate = useNavigate();
 
