@@ -63,7 +63,7 @@ const updateNote = async (e) => {
   return (
     <>
         <div className="notes">
-            <div id='bg-body'></div>
+            {/* <div id='bg-body'></div> */}
             <h1>Notes List</h1>
             <button id='add' onClick={addNote}>Add note</button>   
             <div className='liste-notes'>     
