@@ -6,6 +6,7 @@
 
 body {
   background-color: #f4f4f4;
+  font-family: "Arial", sans-serif;
 }
 
 #root {
@@ -47,6 +48,9 @@ th, td {
   padding: 8px 10px;
   text-align: center;
 }
+th.content, td.content {
+  text-align: left;
+}
 
 form {
   margin: auto;
@@ -85,7 +89,7 @@ button {
   border: none;
   padding: 6px 10px;
   border-radius: 5px;
-  background-color: #4CAF50;
+  background-color: #74bd88;
   color: white;
   width: 100px;
   position: relative;
@@ -105,21 +109,21 @@ button {
 }
 
 #delete {
-  background-color: #fa3a3a;
+  background-color: rgba(255, 0, 0, 0.7);
 }
 
 #delete:hover {
-  background-color: white;
-  color: red;
+  background-color: transparent;
+  color: rgba(255, 0, 0, 0.7);
 }
 
 #update {
-  background-color: rgb(65, 65, 250);
+  background-color: rgba(0, 0, 255, 0.7);
 }
 
 #update:hover {
-  background-color: white;
-  color: rgb(65, 65, 250);
+  background-color: transparent;
+  color: rgba(0, 0, 255, 0.7);
 }
 
 #login {
@@ -179,12 +183,11 @@ select {
 }
 
 .user-style {
-  background-color: #8f8872;
+  background-color: #74bd88;
   color: white;
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  font-size: 20px;
+  width: 35px;
+  height: 35px;
+  border-radius: 17px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -196,10 +199,10 @@ select {
 }
 
 .border-name {
-  width: 60px;
-  height: 60px;
-  background-color: #f4f4f4;
-  border-radius: 30px;
+  width: 45px;
+  height: 45px;
+  background-color: #dfdede;
+  border-radius: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -212,12 +215,71 @@ select {
 
 .hover-name {
   visibility: hidden;
-  background-color: #78715b;
+  background-color: #74bd88;
   color: white;
+  text-align: center;
   font-size: 10px;
+  width: 80px;
   max-height: 300px;
   padding: 5px 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   position: absolute;
-  top: -40px;
+  top: -35px;
+}
+
+.liste-notes {
+  background-color: rgba(183, 244, 183, 0.6);
+  border-top-left-radius: 150px;
+  border-top-right-radius: 150px;
+  padding: 50px 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.liste-notes .note {
+  display: flex;
+  margin: 0px auto 15px;
+  padding: 10px;
+  width: 90%;
+  background-color: #ede3e3;
+  border-radius: 10px;
+  align-items: center;
+}
+.liste-notes .note .note-title {
+  text-align: center;
+  text-decoration: underline;
+  padding: 10px 5px;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(67, 67, 81);
+  margin-right: 10px;
+  width: 200px;
+  border-radius: 5px;
+}
+.liste-notes .note .note-content {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  font-size: 16px;
+  color: #000;
+  width: 100%;
+}
+.liste-notes .note .note-shared {
+  font-size: 16px;
+  color: rgb(67, 67, 81);
+  display: flex;
+}
+.liste-notes .note .btn-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.liste-notes .note .btn-note button {
+  margin: 0px 0px 0px 10px;
+}
+.liste-notes .note .btn-note button:hover {
+  background-color: transparent;
+  color: white;
 }/*# sourceMappingURL=app.css.map */

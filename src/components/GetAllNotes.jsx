@@ -80,9 +80,36 @@ const updateNote = async (e) => {
 
   return (
     <>
-    <div className="notes">
-        <h1>Notes List</h1>
-        <button id='add' onClick={addNote}>Add note</button>
+        <div className="notes">
+            <h1>Notes List</h1>
+            <button id='add' onClick={addNote}>Add note</button>   
+            <div className='liste-notes'>     
+                {
+                    notesList.map( (note, index) => {
+                        return <div className='note' key={index}>
+                                    <div className='note-title'><span>{note.title}</span> </div>
+                                    <div className='note-content'><span>{note.content}</span></div>
+                                    {/* <div className='note-shared'>{note.shared_with.map((user) => user.first_name)}</div> */}
+                                    <div className='note-shared'>
+                                    {
+                                        note.shared_with.map((user, index) => {
+                                            return  <div className='border-name'  key={index}>
+                                                        <div className='user-style'>{user.first_name.substr(0,1)} {user.last_name.substr(0,1)}
+                                                            <span className='hover-name'>{user.last_name} {user.first_name}</span>
+                                                        </div>
+                                                    </div>
+                                                          
+                                        }) 
+                                    } 
+                                    </div>
+                                    <div className='btn-note'>
+                                    <button data-id={note.id} id='delete' onClick={deleteNote}> Delete </button> 
+                                    <button data-id={note.id} id='update' onClick={updateNote}> Update </button>
+                                    </div>
+                                </div>
+                    })
+                }
+            </div> 
             <table >
                 <thead>
                     <tr>
@@ -99,18 +126,17 @@ const updateNote = async (e) => {
                             <tr key={index}>
                                 <td> {note.id} </td>
                                 <td> {note.title} </td>
-                                <td> {note.content} </td>
+                                <td className='content'> {note.content} </td>
                                 <td> 
                                     <div className='name-position'>
                                     {
                                         note.shared_with.map((user, index) => {
-                                            return  <>  
-                                                        <div className='border-name'>
-                                                            <div className='user-style' key={index}>{user.first_name.substr(0,1)} {user.last_name.substr(0,1)}
-                                                                <span className='hover-name'>{user.first_name} {user.last_name}</span>
-                                                            </div>
+                                            return  <div className='border-name'  key={index}>
+                                                        <div className='user-style'>{user.first_name.substr(0,1)} {user.last_name.substr(0,1)}
+                                                            <span className='hover-name'>{user.first_name} {user.last_name}</span>
                                                         </div>
-                                                    </>       
+                                                    </div>
+                                                          
                                         })  
                                     }
                                     {/* <table>
@@ -136,7 +162,6 @@ const updateNote = async (e) => {
                     }
                 </tbody>
             </table>
-            
         </div>
     </>
   )
