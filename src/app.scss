@@ -136,6 +136,10 @@ button {
     border: none;
     border-radius: 5px;
     background-color: #c4baba;
+    &:hover {
+        background-color: transparent;
+        color: rgb(67, 67, 81);
+    }
 }
 
 #manage-note {
@@ -169,3 +173,61 @@ button {
 select {
     width: 100px;
 }
+
+.user-style {
+    background-color: #8f8872;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    // position: absolute;
+    position: relative;
+    &:hover {
+        span {
+            visibility: visible;
+        }
+    }
+}
+.border-name {
+    width: 60px;
+    height: 60px;
+    // background-color: #7e681f;
+    background-color: #f4f4f4;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.name-position {
+    display: flex;
+    justify-content: center;
+    // margin-left: -10px;
+}
+.hover-name {
+    visibility : hidden;
+    background-color: #78715b;
+    color: white;
+    font-size: 10px;
+    // font-weight: bold;
+    // width: '150px',
+    // width: 80px;
+    // max-width: 300px;
+    max-height: 300px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: -40px;
+    // left: 1px,
+}
+
+// .border-name > .user-style {
+//     // margin-left: -10px;
+// }
+
+
+

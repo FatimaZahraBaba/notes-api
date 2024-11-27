@@ -141,6 +141,10 @@ button {
   border-radius: 5px;
   background-color: #c4baba;
 }
+#logout:hover {
+  background-color: transparent;
+  color: rgb(67, 67, 81);
+}
 
 #manage-note {
   border: none;
@@ -172,4 +176,48 @@ button {
 
 select {
   width: 100px;
+}
+
+.user-style {
+  background-color: #8f8872;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+.user-style:hover span {
+  visibility: visible;
+}
+
+.border-name {
+  width: 60px;
+  height: 60px;
+  background-color: #f4f4f4;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.name-position {
+  display: flex;
+  justify-content: center;
+}
+
+.hover-name {
+  visibility: hidden;
+  background-color: #78715b;
+  color: white;
+  font-size: 10px;
+  max-height: 300px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: absolute;
+  top: -40px;
 }/*# sourceMappingURL=app.css.map */

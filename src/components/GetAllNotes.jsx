@@ -4,11 +4,31 @@ import { useNavigate } from 'react-router-dom';
 
 
 function GetAllNotes() {
+
+    // const fullName = {
+    //     visibility : 'hidden',
+    //     backgroundColor: '#F1C232',
+    //     color: 'white',
+    //     fontSize: '10px',
+    //     // width: '150px',
+    //     maxWidth: '400px',
+    //     maxHeight: '100px',
+    //     padding: '5px 10px',
+    //     borderRadius: '5px',
+    //     position: 'absolute',
+    //     top: '-40px',
+    //     left: '1px',
+    //     // '&:hover' {
+    //     //     visibility: 'visible'
+    //     // }  
+    // }
     
     const [notesList, setNotesList] = useState([]);
     const navigate = useNavigate();
 
     const addNote = () =>  navigate('/notes') ;
+
+    const [onMouseEnter, setOnMouseEnter] = useState(false);
 
     // const getNotes = async () => {
     //     const token = localStorage.getItem("token");
@@ -81,7 +101,19 @@ const updateNote = async (e) => {
                                 <td> {note.title} </td>
                                 <td> {note.content} </td>
                                 <td> 
-                                    <table>
+                                    <div className='name-position'>
+                                    {
+                                        note.shared_with.map((user, index) => {
+                                            return  <>  
+                                                        <div className='border-name'>
+                                                            <div className='user-style' key={index}>{user.first_name.substr(0,1)} {user.last_name.substr(0,1)}
+                                                                <span className='hover-name'>{user.first_name} {user.last_name}</span>
+                                                            </div>
+                                                        </div>
+                                                    </>       
+                                        })  
+                                    }
+                                    {/* <table>
                                         <tbody>
                                         {
                                             note.shared_with.map((u, index) => {
@@ -92,8 +124,8 @@ const updateNote = async (e) => {
                                             })
                                         } 
                                         </tbody>
-                                    </table>
-
+                                    </table> */}
+                                    </div>
                                 </td>
                                 <td> 
                                     <button data-id={note.id} id='delete' onClick={deleteNote}> Delete </button> 
