@@ -236,15 +236,18 @@ select {
   color: white;
   text-align: center;
   font-size: 10px;
-  width: 80px;
-  max-height: 300px;
-  padding: 5px 10px;
+  padding: 8px;
   border-radius: 10px;
   position: absolute;
-  top: -35px;
+  top: -50%;
+  left: 50%;
+  transform: translate(-50%, -13px);
+  white-space: nowrap;
+  transition: all 0.3s;
 }
 
 .liste-notes {
+  background-color: rgba(255, 255, 255, 0.7);
   border-top-left-radius: 150px;
   border-top-right-radius: 150px;
   padding: 50px 20px;

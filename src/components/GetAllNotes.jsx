@@ -77,7 +77,7 @@ const updateNote = async (e) => {
                                     {
                                         note.shared_with.map((user, index) => {
                                             return  <div className='border-name'  key={index}>
-                                                        <div className='user-style'>{user.first_name.substr(0,1)} {user.last_name.substr(0,1)}
+                                                        <div className='user-style'>{user.first_name.substr(0,1)}{user.last_name.substr(0,1)}
                                                             <span className='hover-name'>{user.last_name} {user.first_name}</span>
                                                         </div>
                                                     </div>
@@ -116,7 +116,7 @@ const updateNote = async (e) => {
                                         note.shared_with.map((user, index) => {
                                             return  <div className='border-name'  key={index}>
                                                         <div className='user-style'>{user.first_name.substr(0,1)} {user.last_name.substr(0,1)}
-                                                            <span className='hover-name'>{user.first_name} {user.last_name}</span>
+                                                            <span className='hover-name'>{user.first_name}{user.last_name}</span>
                                                         </div>
                                                     </div>
                                                           
