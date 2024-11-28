@@ -218,11 +218,15 @@ select {
 .border-name {
   width: 40px;
   height: 40px;
-  background-color: white;
+  background-color: rgb(252, 252, 193);
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.border-name:not(:first-child) {
+  margin-left: -10px;
+  z-index: 100;
 }
 
 .name-position {
@@ -241,9 +245,18 @@ select {
   position: absolute;
   top: -50%;
   left: 50%;
-  transform: translate(-50%, -13px);
+  transform: translate(-50%, -20px);
   white-space: nowrap;
   transition: all 0.3s;
+}
+.hover-name::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 99.8%);
+  border: solid 5px transparent;
+  border-top-color: rgba(190, 131, 4, 0.6);
 }
 
 .liste-notes {

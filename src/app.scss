@@ -277,22 +277,30 @@ select {
             visibility: visible;
         }
     }
+
+
 }
 .border-name {
     width: 40px;
     height: 40px;
     // background-color: #7e681f;
     // background-color: #dfdede;
-    background-color: white;
+    background-color: rgb(252, 252, 193);
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    &:not(:first-child) {
+        margin-left: -10px;
+        z-index: 100;
+    }
 }
 .name-position {
     display: flex;
     justify-content: center;
     // margin-left: -10px;
+    
 }
 .hover-name {
     visibility : hidden;
@@ -318,7 +326,7 @@ select {
     position: absolute;
     top: -50%;
     left: 50%;
-    transform: translate(-50%, -13px);
+    transform: translate(-50%, -20px);
     // background-color: inherit;
     white-space: nowrap;
     // padding: 10px;
@@ -326,6 +334,19 @@ select {
     // opacity: 0;
     // visibility: hidden;
     transition: all .3s;
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 99.8%);
+        // transform: translate(-50%, 50%);
+        // width: 10px;
+        // height: 10px;
+        border: solid 5px transparent;
+        border-top-color: rgba(190, 131, 4, 0.6);
+        // background-color: rgba(190, 131, 4, 0.6);
+    }
 }
 
 .liste-notes {
