@@ -49,16 +49,16 @@ useEffect(() => {
 // console.log(notesList);
 
 
-const deleteNote = async (e) => {
-    const id = e.target.getAttribute('data-id');
+const deleteNote = async (id) => {
+    // const id = e.currentTarget.getAttribute('data-id');
     const url = `/notes/${id}`;
     const resp = await axios.delete(url);
     // console.log(resp);
     getNotes();
 }
 
-const updateNote = async (e) => {
-    const id = e.target.getAttribute('data-id');
+const updateNote = async (id) => {
+    // const id = e.currentTarget.getAttribute('data-id');
     navigate(`/notes/${id}`);
 }
 
@@ -90,8 +90,8 @@ const updateNote = async (e) => {
                                     <div className='btn-note'>
                                     {/* <button data-id={note.id} id='delete' onClick={deleteNote}> Delete </button> 
                                     <button data-id={note.id} id='update' onClick={updateNote}> Update </button> */}
-                                    <button data-id={note.id} className='icon' onClick={deleteNote}> <img src={del} /> </button> 
-                                    <button data-id={note.id} className='icon' onClick={updateNote}> <img src={up} /> </button>
+                                    <button className='icon' onClick={() => deleteNote(note.id)}> <img src={del} /> </button> 
+                                    <button className='icon' onClick={() => updateNote(note.id)}> <img src={up} /> </button>
                                     </div>
                                 </div>
                     })

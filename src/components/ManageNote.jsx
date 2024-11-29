@@ -38,8 +38,8 @@ function ManageNote() {
                 setNoteData(resp.data);
                 const options = resp.data.shared_with.map( ({first_name, last_name, id}) => 
                     ({
-                            label : `${u.first_name} ${u.last_name}`,
-                            value : u.id
+                            label : `${first_name} ${last_name}`,
+                            value : id
                         
                     }));
                 setSelectedUsers(options); 
