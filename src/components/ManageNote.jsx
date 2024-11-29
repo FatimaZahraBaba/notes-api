@@ -57,11 +57,11 @@ function ManageNote() {
     const submitNote = async (e) => {
         e.preventDefault();
         if(id) {
-            const url = `/notes/${id}`;
-            const resp = await axios.put(url, {...noteData, shared_with});
+            // const url = `/notes/${id}`;
+            const resp = await axios.put(`/notes/${id}`, {...noteData, shared_with});
         } else {
-            const url = '/notes';
-            const resp = await axios.post(url, {...noteData, shared_with});
+            // const url = '/notes';
+            const resp = await axios.post('/notes', {...noteData, shared_with});
         }
         navigate('/');
     }

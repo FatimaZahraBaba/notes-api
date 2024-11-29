@@ -45,7 +45,7 @@ function App() {
 
   return (
     <>
-      <div id='bg-body'></div>
+      {/* <div id='bg-body'></div> */}
       {/* { isConnected ? <GetAllNotes /> : <Login setIsConnected={setIsConnected} /> }  */}
       {/* <Router> */}
         <Routes>

@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import del from './../../public/del.png'
+import up from './../../public/up.png'
 
 
 function GetAllNotes() {
@@ -88,6 +90,8 @@ const updateNote = async (e) => {
                                     <div className='btn-note'>
                                     <button data-id={note.id} id='delete' onClick={deleteNote}> Delete </button> 
                                     <button data-id={note.id} id='update' onClick={updateNote}> Update </button>
+                                    {/* <button data-id={note.id} className='icon' onClick={deleteNote}> <img src={del} /> </button> 
+                                    <button data-id={note.id} className='icon' onClick={updateNote}> <img src={up} /> </button> */}
                                     </div>
                                 </div>
                     })
