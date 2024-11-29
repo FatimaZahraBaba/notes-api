@@ -8,7 +8,7 @@ function ManageNote() {
 
     const navigate = useNavigate();
 
-    const id = useParams().id ? useParams().id : '';
+    const {id} = useParams();
     const [noteData, setNoteData] = useState({});
     const [usersOptions, setUsersOptions] = useState([]);   
     const [selectedUsers, setSelectedUsers] = useState([]); 
@@ -36,12 +36,12 @@ function ManageNote() {
                 const url = `/notes/${id}`;
                 const resp = await axios.get(url);
                 setNoteData(resp.data);
-                const options = resp.data.shared_with.map( u => {
-                    return {
+                const options = resp.data.shared_with.map( ({first_name, last_name, id}) => 
+                    ({
                             label : `${u.first_name} ${u.last_name}`,
                             value : u.id
-                        }
-                });
+                        
+                    }));
                 setSelectedUsers(options); 
             }
         }
@@ -49,9 +49,7 @@ function ManageNote() {
     }, [])
 
     const onChangeSelect = (e) => {
-        const options = [];
-        options.push(...e);
-        setSelectedUsers(options);
+        setSelectedUsers([...e]);
     }
 
     const submitNote = async (e) => {

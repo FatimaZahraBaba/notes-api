@@ -88,10 +88,10 @@ const updateNote = async (e) => {
                                     } 
                                     </div>
                                     <div className='btn-note'>
-                                    <button data-id={note.id} id='delete' onClick={deleteNote}> Delete </button> 
-                                    <button data-id={note.id} id='update' onClick={updateNote}> Update </button>
-                                    {/* <button data-id={note.id} className='icon' onClick={deleteNote}> <img src={del} /> </button> 
-                                    <button data-id={note.id} className='icon' onClick={updateNote}> <img src={up} /> </button> */}
+                                    {/* <button data-id={note.id} id='delete' onClick={deleteNote}> Delete </button> 
+                                    <button data-id={note.id} id='update' onClick={updateNote}> Update </button> */}
+                                    <button data-id={note.id} className='icon' onClick={deleteNote}> <img src={del} /> </button> 
+                                    <button data-id={note.id} className='icon' onClick={updateNote}> <img src={up} /> </button>
                                     </div>
                                 </div>
                     })
