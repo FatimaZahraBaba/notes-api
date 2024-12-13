@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 function Login(props) {
 
     
-    const [cin, setCin] = useState('JK36184');
-    const [pass, setPassword] = useState('123456');
+    const [cin, setCin] = useState('');
+    const [pass, setPassword] = useState('');
     const navigate = useNavigate();
 
     const onButtonClick = async (e) => {
