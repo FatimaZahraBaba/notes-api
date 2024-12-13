@@ -360,8 +360,8 @@ select {
     background-color: rgb(255, 255, 255, 0.7);
     // border-top-left-radius: 150px ;
     // border-top-right-radius: 150px ;
-    border-top-left-radius: 80px ;
-    border-top-right-radius: 80px ;
+    border-top-left-radius: 40px ;
+    border-top-right-radius: 40px ;
     padding: 50px 20px;
     margin-top: 20px;
     display: flex;
@@ -444,7 +444,7 @@ select {
     }
 }
 
-.icon {
+.icon-del, .icon-up {
     background-color: transparent;
     border: none;
     img {

@@ -1,27 +1,27 @@
 import { useEffect, useState } from 'react';
-import {Routes, Route, Link, useNavigate } from 'react-router-dom';
+import {Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios'
-import './app.scss'
-import Login from './components/Login'
-import GetAllNotes from './components/GetAllNotes'
-import Logout from './components/Logout'
-import ManageNote from './components/ManageNote';
-// import CreateNote from './components/CreateNote'
-// import UpdateNote from './components/UpdateNote'
+import Login from './pages/Login'
+import Notes from './pages/Notes'
+import Header from './pages/Header'
+import ManageNote from './pages/ManageNote'
+import Sppiner from './pages/Sppiner'
+import EditPassword from './pages/EditPassword'
+import ConfirmationDelete from './pages/ConfirmationDelete'
 
-axios.interceptors.request.use((request) => {
+
+axios.interceptors.request.use((request) => { 
   const token = localStorage.getItem('token');
   if (token) {
     request.headers.Authorization = `Bearer ${token}`;
   }
-  // console.log('Interceptor request called');
-  // console.log(request);
   return request;
 });
 
 function App() {
   
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     axios.interceptors.response.use(response => {
@@ -30,34 +30,25 @@ function App() {
       if (error.response.status === 401) {
           navigate('/login');
       }
-      // console.log('Interceptor response called');
       return error;
     });
   }, []);
 
-  // const [isConnected, setIsConnected] = useState(false);
-  // useEffect(() => {
-  //   const token = localStorage.getItem('token');
-  //   if(token) {
-  //     setIsConnected(true);
-  //   }
-  // }, []);
-
   return (
     <>
-      {/* <div id='bg-body'></div> */}
-      {/* { isConnected ? <GetAllNotes /> : <Login setIsConnected={setIsConnected} /> }  */}
-      {/* <Router> */}
+      <Sppiner />
+        {
+          // localStorage.getItem('token') && <Header />
+          location.pathname !== '/login' && <Header />
+        }
         <Routes>
-          <Route exact path='/' element={<GetAllNotes />} />
+          <Route exact path='/' element={<Notes />} />
           <Route path='/login' element={<Login />} />
           <Route path='/notes' element={<ManageNote />} />
           <Route path='/notes/:id' element={<ManageNote />} />
+          <Route path='/edit-password' element={<EditPassword />} />
+          <Route path='/confirmation-delete/:id' element={<ConfirmationDelete />} />
         </Routes>
-        {
-          localStorage.getItem('token') ? <Logout /> : ''
-        }
-      {/* </Router> */}
     </>
   )
 }

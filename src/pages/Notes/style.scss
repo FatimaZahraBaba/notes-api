@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #292623;
+}
+
+.notes-container {
+    max-width: 1200px;
+    margin: auto;
+    .notes {
+        background-color: #292623;
+        padding: 50px;
+        .add-btn {
+            display: flex;
+            justify-content: flex-end;
+            button {
+                &#add {
+                    background-color: transparent;
+                    border: 2px solid #D7D261;
+                    padding: 15px;
+                    font-size: 16px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-self: flex-end;
+                    cursor: pointer;
+                    img {
+                        width: 20px;
+                        height: 20px;
+                    }
+                    &:hover {
+                        background-color: #D7D261;
+                        img {
+                            filter: invert(1);
+                        }
+                    }
+    
+                }
+            }
+        }
+        .liste-notes {
+            // display: flex;
+            // flex-wrap: wrap;
+            // justify-content: center;
+            column-count: 4;
+            .note {
+                width: 100%;
+                max-width: 250px;
+                border-radius: 30px;
+                border-bottom-right-radius: 0px;
+                background-color: #edf8c5;
+                // background-color: rgba(215, 210, 97, .2);
+                border: none;
+                padding: 20px;
+                margin: 10px;
+                display: inline-block;
+                flex-direction: column;
+                &:hover {
+                    box-shadow: 10px -10px 20px rgba(0, 0, 0, 0.2);
+                    .note-header .del-up {
+                        .icon-del, .icon-up {
+                            visibility: visible;
+                        }
+                    } 
+                }
+                .note-header {
+                    width: 100px;
+                    font-size: 12px;
+                    margin-bottom: 10px;
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    .del-up {
+                        display: flex;
+                        .icon-del, .icon-up {
+                            cursor: pointer;
+                            visibility: hidden;
+                            background-color: transparent;
+                            border: none;
+                            img {
+                                width: 20px;
+                                height: 20px;
+                                filter: opacity(.8);
+                            }
+                            &:hover {
+                                img {
+                                    filter: opacity(1);
+                                }
+                            }
+                        }
+                        .icon-up {
+                            img {
+                                width: 30px;
+                                height: 30px;
+                            }
+                        }
+                    }
+                }
+                .note-title {
+                    font-size: 30px;
+                    margin-bottom: 10px;
+                    font-weight: bold;
+                }
+                hr {
+                    margin: 5px 0;
+                    border: 1px solid rgba(122, 122, 121, 0.3);
+                }
+                .note-content {
+                    margin-top: 20px;
+                    color: rgb(30, 30, 30, .9);
+                }
+                .note-shared {
+                    font-size: 16px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    // overflow: auto;
+                    scrollbar-width: none;
+                    padding-left: 10px;
+                    margin-top: 20px;
+                    .user-style {
+                        padding: 20px;
+                        border: solid 3px #edf8c5;
+                        background-color: rgb(41, 38, 35);
+                        font-size: 16px;
+                        color: white;
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        position: relative;
+                        margin-left: -9px;
+                        &:hover {
+                            span {
+                                visibility: visible;
+                            }
+                        }
+                        .hover-name {
+                            visibility : hidden;
+                            // background-color: rgba(190, 131, 4, 0.6);
+                            background-color: rgba(41, 38, 35, .9);
+                            color: white;
+                            text-align: center;
+                            font-size: 12px;
+                            padding: 10px;
+                            border-radius: 10px;
+                            position: absolute;
+                            top: -50%;
+                            left: 50%;
+                            transform: translate(-50%, -25px);
+                            white-space: nowrap;
+                            transition: all .1s;
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                bottom: 0;
+                                left: 50%;
+                                transform: translate(-50%, 99%);
+                                border: solid 5px transparent;
+                                border-top-color: rgba(41, 38, 35, .9);
+                            }
+                        }
+                    } 
+                }
+            }
+        }
+
+    }
+}    

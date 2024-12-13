@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #f9f9f9;
+    // background-color: #292623;
+    background-color: rgb(41, 38, 35, .9);
+    border: none;
+    border-bottom: 2px solid #D7D261;
+    padding: 5px 40px;
+    // width: 80%;
+    max-width: 1200px;
+    margin: auto;
+    .hello {
+        display: flex;
+        align-items: center;
+        img {
+            width: 80px;
+            height: 80px;
+        }
+    }
+
+    .profil-logout {
+        display: flex;
+        position: relative;
+        .user-name {
+            margin-right: 15px;
+            padding: 20px;
+            font-size: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            background: url('./../../../public/profile.png') center;
+            background-size: cover;
+            cursor: pointer;
+        }
+        &:hover .settings {
+            visibility: visible;
+        }
+        .settings {
+            background-color: #585858;
+            padding: 7px 0px;
+            border-radius: 5px;
+            width: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            left: -100%;
+            top: 75%;
+            margin-top: 10px;
+            visibility: hidden;
+            button {
+                background-color: transparent;
+                color: black;
+                border: none;
+                outline: none;
+                // padding: 0px 20px;
+                font-size: 16px;
+                border-radius: 20px;
+                margin-bottom: 5px;
+                cursor: pointer;
+                &:hover {
+                    color: #D7D261;
+                }
+            }
+        }
+    }
+}

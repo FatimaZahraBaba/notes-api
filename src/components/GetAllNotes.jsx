@@ -90,8 +90,8 @@ const updateNote = async (id) => {
                                     <div className='btn-note'>
                                     {/* <button data-id={note.id} id='delete' onClick={deleteNote}> Delete </button> 
                                     <button data-id={note.id} id='update' onClick={updateNote}> Update </button> */}
-                                    <button className='icon' onClick={() => deleteNote(note.id)}> <img src={del} /> </button> 
-                                    <button className='icon' onClick={() => updateNote(note.id)}> <img src={up} /> </button>
+                                    <button className='icon-del' onClick={() => deleteNote(note.id)}> <img src={del} /> </button> 
+                                    <button className='icon-up' onClick={() => updateNote(note.id)}> <img src={up} /> </button>
                                     </div>
                                 </div>
                     })

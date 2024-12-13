@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+    .blur-bg {
+        width: 100%;
+        height: 100%;
+        filter: blur(5px);
+        // transform: scale(1.02);
+    }
+    .form-edit {
+        position: absolute;
+        top: 5px;
+        // left: 33%;
+        width: 100%;
+        height: 89vh;
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+        //    display: block;
+           align-self: flex-start;
+           margin-bottom: 5px;
+             color: #370000;
+        }
+        form {
+            background-color: #424242cc;
+            box-shadow: 0px 0px 10px 1px #D7D261;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 50%;
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+            border-radius: 30px;
+            border-bottom-right-radius: 0px;
+            // margin-top: 50px;
+            input {
+                margin-bottom: 10px;
+                padding: 10px;
+                margin-bottom: 20px;
+                // border-radius: 10px;
+                border: none;
+                outline: none;
+                background-color: transparent;
+                border-bottom: 1px solid #D7D261;
+                font-size: 16px;
+                width: 100%;
+                // &::placeholder {
+                //     color: #D7D261;
+                // }
+            }
+            button:not(#cancel) {
+                padding: 10px;
+                width: 100%;
+                background-color: #D7D261;
+                color: rgb(8, 8, 8, .8);
+                font-size: 20px;
+                font-weight: bold;
+                border-radius: 20px;
+                border-bottom-right-radius: 0px;
+                border: none;
+                cursor: pointer;
+                margin-top: 30px;
+                &:hover {
+                    background-color: #D7D261cc;
+                    color: rgb(19, 19, 19);
+                }
+            }
+            #cancel {
+                cursor: pointer;
+                display: flex;
+                align-self: flex-end;
+                background-color: transparent;
+                border: none;
+                img {
+                    width: 20px;
+                    height: 20px;
+                    filter: opacity(.5);
+                }
+                &:hover {
+                    img {
+                        filter: opacity(1);
+                    }
+                }
+            }
+        }
+    }
+}

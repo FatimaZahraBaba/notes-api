@@ -1,0 +1,65 @@
+// Variables de couleurs
+$black: #000;
+$dark-gray: #333;
+$yellow: #ffeb7b;
+$light-yellow: #ffecb3;
+
+.confirmation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.confirmation-delete {
+  background-color: $dark-gray;
+  color: $light-yellow;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.confirmation-msg {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.confirmation-btns {
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &.confirmation-delete-yes {
+      background-color: $yellow;
+      color: $black;
+
+      &:hover {
+        background-color: darken($yellow, 10%);
+      }
+    }
+
+    &.confirmation-delete-no {
+      background-color: $light-yellow;
+      color: $dark-gray;
+
+      &:hover {
+        background-color: darken($light-yellow, 10%);
+      }
+    }
+  }
+}

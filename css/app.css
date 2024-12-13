@@ -120,11 +120,8 @@ button {
   border: none;
   padding: 5px 10px;
   border-radius: 5px;
-  color: white;
-}
-
-#delete {
-  background-color: rgba(255, 0, 0, 0.6);
+  background-color: transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 #delete:hover {
@@ -132,13 +129,9 @@ button {
   color: rgba(255, 0, 0, 0.6);
 }
 
-#update {
-  background-color: rgba(3, 201, 211, 0.7);
-}
-
 #update:hover {
   background-color: transparent;
-  color: rgba(3, 201, 211, 0.7);
+  color: rgba(26, 30, 154, 0.8);
 }
 
 #login {
@@ -218,7 +211,7 @@ select {
 .border-name {
   width: 40px;
   height: 40px;
-  background-color: rgb(252, 252, 193);
+  background-color: rgb(253, 253, 224);
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -261,8 +254,8 @@ select {
 
 .liste-notes {
   background-color: rgba(255, 255, 255, 0.7);
-  border-top-left-radius: 150px;
-  border-top-right-radius: 150px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
   padding: 50px 20px;
   margin-top: 20px;
   display: flex;
@@ -277,7 +270,7 @@ select {
   padding: 0px 10px 0px 0px;
   width: 90%;
   height: inherit;
-  background-color: rgb(252, 252, 193);
+  background-color: rgba(252, 252, 193, 0.4);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   align-items: center;
@@ -291,7 +284,7 @@ select {
   margin-right: 10px;
   width: 200px;
   margin-left: 0px;
-  background-color: rgba(255, 174, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
@@ -321,10 +314,11 @@ select {
   color: white;
 }
 
-.icon {
-  font-size: 20px;
+.icon-del, .icon-up {
+  background-color: transparent;
+  border: none;
+}
+.icon-del img, .icon-up img {
   width: 20px;
   height: 20px;
-  background-color: transparent;
-  cursor: pointer;
 }/*# sourceMappingURL=app.css.map */
